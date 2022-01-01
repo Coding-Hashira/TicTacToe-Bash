@@ -1,7 +1,6 @@
 // Variables
-var bgMusic = new Audio('/Assets/music.mp3')
-var ting = new Audio('/Assets/ting.mp3')
-var gameOver = new Audio('/Assets/gameover.mp3')
+var bgMusic = new Audio('/music.mp3')
+var ting = new Audio('/ting.mp3')
 var turn = 'X'
 var isgameover = false
 var turn = 'X'
