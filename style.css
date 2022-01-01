@@ -1,0 +1,237 @@
+:root{
+    --theme: linear-gradient(to bottom right, black, rgb(0, 0, 45));
+}
+*{
+    font-family: 'Poppins';
+    margin: 0;
+    padding: 0;
+}
+footer{
+    display: flex;
+    color: white;
+    background-color: black;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    font-family: sans-serif;
+}
+.main{
+    min-height: 100vh;
+}
+body{
+    overflow-x: hidden;
+}
+nav{
+    width: 200vw;
+    background-image: var(--theme);
+    height: 50px;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+nav ul{
+    display: flex;
+    list-style-type: none;
+}
+nav ul li{
+    padding: 0 2rem;
+    font-weight: bolder;
+}
+.info{
+    text-align: center;
+}
+.gameContainer{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.playerInput{
+    margin: 15px 0;
+    width: 40vw;
+    display: flex;
+    padding: 1px 9px;
+    text-transform:capitalize;
+    height: 35px;
+    font-size: large;
+    border: none;
+    border-bottom: 2px solid black;
+    align-items: flex-end;
+}
+.playerInput:focus{
+    outline: none;
+}
+.error{
+    font-size: small;
+    position: relative;
+    color: red;
+    bottom: 13px;
+    right: 200px;
+    visibility: hidden;
+}
+.show{
+    visibility: visible;
+}
+.gameStart, #reset{
+    border: none;
+    margin-top: 20px;
+    cursor: pointer;
+    height: 37px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 142px;
+    color: white;
+    background-image: var(--theme);
+}
+#reset{
+    margin-top: 10px;
+    z-index: 9;
+}
+.game{
+    display: flex;
+    justify-content: center;
+    height: 95vh;
+    flex-direction: column;
+    align-items: center;
+}
+.container{
+    margin: 25px 0;
+    display: grid;
+    grid-template-rows: repeat(3, 20vw);
+    grid-template-columns: repeat(3, 20vw);
+    z-index: 9999;
+}
+.mainGame, .extras{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.box{
+    border: 2px solid rgb(0, 0, 0);
+    display: flex;
+    font-size: 17vw;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.box:hover{
+    background-color: rgb(238, 234, 243);
+}
+.gameInfo{
+    padding: 0 34px;
+    
+}
+.br-0{
+    border-right: 0;
+}
+.bl-0{
+    border-left: 0;
+}
+.bt-0{
+    border-top: 0;
+}
+.bb-0{
+    border-bottom: 0;
+}
+.sureMsg{
+    height: 45vh;
+    display: flex;
+    z-index: -1;
+    margin: auto;
+    width: 100vw;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.con{
+    position: absolute;
+    height: 100vh;
+    top: 0;
+    visibility: hidden;
+    width: 100vw;
+    display: flex;
+    z-index: 9;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.sureTxt{
+    font-size: 3.5vw;
+}
+.msg{
+    border: 2px solid black;
+    border-radius: 10px;
+    display: flex;
+    height: 31vw;
+    background-color: white;
+    box-shadow: 1px 1px 1px black;
+    box-sizing: border-box;
+    padding: 0 18px;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.btn{
+    padding: 5px 17px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 2vw;
+    border-radius: 5px;
+}
+.btn:active{
+    outline: none;
+    border: none;
+}
+.boxtext{
+    height:-webkit-fill-available;
+    display: flex;
+    align-items: center;
+}
+.no{
+    background-color: #dc3545;
+    transition: all, 0.35s;
+}
+.yes{
+    transition: all, 0.35s;
+    background-color: #04AA6D;
+}
+.sameSettings{
+    font-size: 1.5vw;
+    transition: all, 0.35s;
+    background-color: #007bff;
+    padding: 10px 17px;
+}
+.sameSettings:hover{
+    background-color: #0069d9;
+}
+.no:hover{
+    background-color: #a32330;
+}
+.yes:hover{
+    background-color: #048052;
+}
+.buttonCls{
+    display: flex;
+    flex-wrap: nowrap;
+    width: -webkit-fill-available;
+    justify-content: space-between;
+}
+
+@media screen and (min-width:850px) {
+    .container{
+        grid-template-columns: repeat(3, 11vw);
+        grid-template-rows: repeat(3, 11vw);
+    }
+    .box{
+        font-size: 12vw;
+    }
+    .sureTxt{
+        font-size: 2vw;
+    }
+}

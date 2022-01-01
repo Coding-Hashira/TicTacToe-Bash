@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <!-- Icons -->
+    <script src="https://kit.fontawesome.com/46a0c7cf6a.js" crossorigin="anonymous"></script>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+    <!-- Files -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/Assets/tic-tac-toe.png" type="image/x-icon">
+</head>
+<body>
+    <div class="all">
+    <main>
+    <nav>
+        <ul>
+            <li>MyTicTacToe</li>
+        </ul>
+    </nav>
+    
+    <div class="body">
+        <div class="gameContainer">
+            <input value="Player 1" autocomplete="off" spellcheck="false" type="text" placeholder="ENTER PLAYER 1" id="playerInput1" class="playerInput">
+            <input value="Player 2" autocomplete="off" spellcheck="false" type="text" placeholder="ENTER PLAYER 2" id="playerInput2" class="playerInput">
+            <button onclick="gameStart()" class="gameStart">Start The Game!</button>
+        </div>
+    </div>
+    </main>
+    <footer>&copy;</footer>
+</div>
+</body>
+<script src="index.js"></script>
+</html>
