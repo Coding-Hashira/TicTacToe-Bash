@@ -6,6 +6,11 @@
     margin: 0;
     padding: 0;
 }
+.btnCls{
+    width: -webkit-fill-available;
+    display: flex;
+    justify-content: space-evenly;
+}
 footer{
     display: flex;
     color: white;
