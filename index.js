@@ -24,7 +24,6 @@ var game = `<div class="game">
     <span class="sureTxt">Are You Sure You Want To Restart The Game?</span>
     <div class="btnCls">
         <button class="yes btn">Yes!</button>
-        <button class="sameSettings btn">Yes, Continue With Same Settings!</button>
         <button class="no btn">No!</button>
     </div>
 </div>
