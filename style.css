@@ -6,6 +6,10 @@
     margin: 0;
     padding: 0;
 }
+main{
+    overflow: hidden;
+    height: 100vh;
+}
 .btnCls{
     width: -webkit-fill-available;
     display: flex;
@@ -20,12 +24,6 @@ footer{
     align-items: center;
     height: 30px;
     font-family: sans-serif;
-}
-.main{
-    min-height: 100vh;
-}
-body{
-    overflow-x: hidden;
 }
 nav{
     width: 200vw;
@@ -123,6 +121,9 @@ nav ul li{
     justify-content: center;
     cursor: pointer;
 }
+button, a, div, span{
+    -webkit-tap-highlight-color: transparent;
+}
 .box:hover{
     background-color: rgb(238, 234, 243);
 }
@@ -205,15 +206,6 @@ nav ul li{
 .yes{
     transition: all, 0.35s;
     background-color: #04AA6D;
-}
-.sameSettings{
-    font-size: 1.5vw;
-    transition: all, 0.35s;
-    background-color: #007bff;
-    padding: 10px 17px;
-}
-.sameSettings:hover{
-    background-color: #0069d9;
 }
 .no:hover{
     background-color: #a32330;

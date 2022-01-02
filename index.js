@@ -152,9 +152,7 @@ function runGame() {
     let reset = document.querySelector('#reset')
     let yesBtn = document.querySelector('.yes')
     let noBtn = document.querySelector('.no')
-    let sameSettings = document.querySelector('.sameSettings')
     reset.addEventListener('click', () => {
-        let boxtexts = document.querySelectorAll('.boxtext');
         let cont = document.querySelector('.con')
         ting.play()
         cont.style.opacity = '1'
@@ -171,24 +169,9 @@ function runGame() {
             cont.style.visibility = 'hidden'
             con.style.zIndex = '999'
         })
-        sameSettings.addEventListener('click', () => {
-            ting.play()
-            turnCount = -1
-            Array.from(boxtexts).forEach(element => {
-                element.innerText = ""
-            });
-
-            cont.style.opacity = '0'
-            cont.style.visibility = 'hidden'
-            con.style.zIndex = '999'
-        })
         turn = "X";
         isgameover = true
         document.getElementsByClassName("info")[0].innerText = `${sessionStorage.getItem('X')}'s Turn`;
         
     })
 }
-
-// footer
-let footer = document.querySelector('footer')
-footer.innerHTML=`&copy ${new Date().getFullYear()} | All Rights Reserved`
