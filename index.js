@@ -1,6 +1,6 @@
 // Variables
-var bgMusic = new Audio('/music.mp3')
-var ting = new Audio('/ting.mp3')
+var bgMusic = new Audio('/Assets/music.mp3')
+var ting = new Audio('/Assets/ting.mp3')
 var turn = 'X'
 var isgameover = false
 var turn = 'X'
@@ -48,7 +48,7 @@ function playBGM() {
 }
 var body = document.querySelector('.body')
 
-// Function to redirect
+// Function to redirect to main page
 function redirect() {
     setInterval(() => {
         window.location.reload()
@@ -77,6 +77,7 @@ function func1() {
 }
 
 // function to start game
+// will get triggered onclick start game
 function gameStart() {
     var Player1 = document.getElementById('playerInput1').value
     var Player2 = document.getElementById('playerInput2').value
@@ -88,7 +89,7 @@ function gameStart() {
 
 // Game Logic
 
-
+// function to check win
 const checkWin = () => {
     let boxtext = document.getElementsByClassName('boxtext')
     let win = [
@@ -110,8 +111,11 @@ const checkWin = () => {
     });
 }
 
+// all the content of game page, called in line 70
 function runGame() {
     var turnCount = -1
+
+    // func to change turn and also for tie game
     const changeTurn = () => {
         turnCount += 1
         console.log(turnCount)
@@ -122,6 +126,7 @@ function runGame() {
         }
         return turn === "X" ? "0" : "X"
     }
+
     if (!isgameover) {
         document.getElementsByClassName("info")[0].innerText = `${sessionStorage.getItem('X')}'s Turn`
     }
@@ -185,5 +190,6 @@ function runGame() {
     })
 }
 
+// footer
 let footer = document.querySelector('footer')
 footer.innerHTML=`&copy ${new Date().getFullYear()} | All Rights Reserved`
