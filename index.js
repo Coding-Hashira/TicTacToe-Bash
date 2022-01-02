@@ -4,6 +4,9 @@ var ting = new Audio('/Assets/ting.mp3')
 var turn = 'X'
 var isgameover = false
 var turn = 'X'
+var sureTxt = document.querySelector('.sureTxt')
+var yesBtn = document.querySelector('.yes')
+var noBtn = document.querySelector('.no')
 var game = `<div class="game">
 <div class="mainGame">
 <div class="container">
@@ -40,6 +43,22 @@ var game = `<div class="game">
 `
 
 // Functions
+// func to show that restart window
+const showWin = (mainTxt ='Are You Sure You Want To Restart The Game?', btn1='Yes', btn2='No')=>{
+    var cont = document.querySelector('.con')
+    var con = document.querySelector('.container')
+    ting.play()
+    cont.style.opacity = '1'
+    cont.style.visibility = 'visible'
+    con.style.zIndex = '-1'
+    var sureTxt = document.querySelector('.sureTxt')
+    var yesBtn = document.querySelector('.yes')
+    var noBtn = document.querySelector('.no')
+    sureTxt.innerHTML=mainTxt
+    yesBtn.innerHTML=btn1
+    noBtn.innerHTML=btn2
+}
+
 // Function to play bgm
 function playBGM() {
     bgMusic.loop = true
@@ -112,16 +131,34 @@ const checkWin = () => {
 
 // all the content of game page, called in line 70
 function runGame() {
+    var cont = document.querySelector('.con')
+    var con = document.querySelector('.container')
+    var yesBtn = document.querySelector('.yes')
+    var noBtn = document.querySelector('.no')
     var turnCount = -1
 
     // func to change turn and also for tie game
     const changeTurn = () => {
         turnCount += 1
-        console.log(turnCount)
         if (turnCount === 8 && isgameover == false) {
-            document.getElementsByClassName("info")[0].innerHTML = "Game Tied!! Well Played!<br>Redirecting To Main Page...";
-            redirect()
-            isgameover = true
+            showWin('Game Tied! Well Played, Guys!', 'Restart', "Play Again!")
+            yesBtn.addEventListener('click', ()=>{
+                ting.play()
+                window.location.reload()
+            })
+            noBtn.addEventListener('click', ()=>{
+                ting.play()
+                let boxtexts=document.querySelectorAll('.boxtext')
+                Array.from(boxtexts).forEach(element => {
+                    element.innerHTML=''
+                });
+                turnCount=-1
+                turn='X';
+                document.getElementsByClassName("info")[0].innerText = `${sessionStorage.getItem('X')}'s Turn`
+                cont.style.opacity = '0'
+                cont.style.visibility = 'hidden'
+                con.style.zIndex = '999'
+            })
         }
         return turn === "X" ? "0" : "X"
     }
@@ -150,17 +187,11 @@ function runGame() {
         })
     })
     let reset = document.querySelector('#reset')
-    let yesBtn = document.querySelector('.yes')
-    let noBtn = document.querySelector('.no')
     reset.addEventListener('click', () => {
-        let cont = document.querySelector('.con')
-        ting.play()
-        cont.style.opacity = '1'
-        cont.style.visibility = 'visible'
-        let con = document.querySelector('.container')
-        con.style.zIndex = '-1'
+        showWin()
         yesBtn.addEventListener('click', () => {
             ting.play()
+            isgameover = true
             document.location.reload()
         })
         noBtn.addEventListener('click', () => {
@@ -169,9 +200,6 @@ function runGame() {
             cont.style.visibility = 'hidden'
             con.style.zIndex = '999'
         })
-        turn = "X";
-        isgameover = true
-        document.getElementsByClassName("info")[0].innerText = `${sessionStorage.getItem('X')}'s Turn`;
         
     })
 }
